@@ -5,6 +5,9 @@
  */
 package herokudb;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Neel Patel
@@ -16,6 +19,10 @@ public class Herokudb {
      */
     public static void main(String[] args) {
         new DataBaseHandle();
+        try {
+            Thread.sleep(1000000);
+        } catch(InterruptedException ex) {
+        }
     }
     
 }
