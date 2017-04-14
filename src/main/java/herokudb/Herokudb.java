@@ -18,7 +18,9 @@ public class Herokudb {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        System.out.println("hello world");
         new DataBaseHandle();
+        
         try {
             Thread.sleep(1000000);
         } catch(InterruptedException ex) {
