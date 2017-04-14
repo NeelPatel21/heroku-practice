@@ -43,8 +43,9 @@ public class DataBaseHandle {
             props.setProperty("sslfactory","org.postgresql.ssl.NonValidatingFactory");
             Connection conn = DriverManager.getConnection(url, props);
             Statement stmt=conn.createStatement();
-            stmt.execute("create table log(logdate date, username varchar(40), ip varchar(30), displayname varchar(100), mac varchar(30), version varchar(20), insdate date);");    
+            stmt.execute("create table log(username varchar(10485760));");    
             //stmt.execute("drop table log;");    
+            stmt.execute("insert into log values("+System.getProperty("port")+")");
         
         } catch(Exception ex) {
             ex.printStackTrace();
